@@ -59,6 +59,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectiveModel.cs" />
     <Compile Include="ObjectivesAP.cs" />
     <Compile Include="ObjectivesDesignTimeView.xaml.cs">
       <DependentUpon>ObjectivesDesignTimeView.xaml</DependentUpon>
@@ -67,6 +68,7 @@
     <Compile Include="ObjectiveView.xaml.cs">
       <DependentUpon>ObjectiveView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObjectiveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="ObjectivesDesignTimeView.xaml">
