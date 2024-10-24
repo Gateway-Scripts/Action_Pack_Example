@@ -49,16 +49,32 @@ namespace ObjectivesAP
             ObjectivesViewModel.ObjectivesModel objSelection =
                 (ObjectivesViewModel.ObjectivesModel)(m_designTimeDetails as//cast Data as ObjModel
                 ObjectivesViewModel.ObjectivesDesignTimeDetails).Data;//Getting the Data.
+            //header
             blocks.Add(
                 new BlockUIContainer(
                 new TextBlock//for TextBlock you will need using System.Windows.Controls. (lightbulb).
                 {
-                    Text = $"Objectives: {objSelection.ObjectivesChecked}" +
-                    $"\nParameters:{objSelection.ParametersChecked}"
+                    Text = $"Optimization Objectives",FontSize=16,FontWeight=FontWeights.Bold,
+                    Margin=new Thickness(20,10,0,0)
                 }
                 )
                 );
-
+            if (objSelection.ObjectivesChecked)
+            {
+                blocks.Add(new BlockUIContainer(new ObjectiveView
+                {
+                    DataContext = new ObjectiveViewModel(ps)
+                }));
+            }
+            if (objSelection.ParametersChecked)
+            {
+                blocks.Add(
+                new BlockUIContainer(
+                new TextBlock//for TextBlock you will need using System.Windows.Controls. (lightbulb).
+                {
+                    Text = $"Parameters not yet Implemented."
+                }));
+            }
             return blocks;
         }
 
