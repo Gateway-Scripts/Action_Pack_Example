@@ -64,9 +64,16 @@
       <DependentUpon>ObjectivesDesignTimeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ObjectivesViewModel.cs" />
+    <Compile Include="ObjectiveView.xaml.cs">
+      <DependentUpon>ObjectiveView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="ObjectivesDesignTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObjectiveView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
