@@ -6,7 +6,45 @@
              xmlns:local="clr-namespace:ObjectivesAP"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Margin="20,10,0,0">
+            <!-- Structure, Operator, Dose, Volume, Priority -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="0,0,0,1" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" Text="Structure Id"/>
+        <TextBlock HorizontalAlignment="Center" Text="Operation" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Center" Text="Dose" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Center" Text="Volume" Grid.Column="3"/>
+        <TextBlock HorizontalAlignment="Center" Text="Priority" Grid.Column="4"/>
+        <ItemsControl ItemsSource="{Binding Objectives}" Grid.Row="1" Grid.ColumnSpan="5">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!-- Whatever goes here is repeated for every object in Objectives -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding StructureId}"/>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Operation}" Grid.Column="1"/>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Dose}" Grid.Column="2"/>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Volume}" Grid.Column="3"/>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Priority}" Grid.Column="4"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>
